@@ -1,0 +1,24 @@
+{
+  "topics": [
+    "artificial intelligence",
+    "entrepreneurship",
+    "productivity",
+    "technology trends",
+    "leadership",
+    "startup culture",
+    "digital transformation",
+    "innovation",
+    "future of work",
+    "personal development",
+    "marketing strategy",
+    "data science"
+  ],
+  "rss_feeds": [
+    "https://techcrunch.com/feed/",
+    "https://feeds.feedburner.com/entrepreneur/latest",
+    "https://hbr.org/stories.rss",
+    "https://www.wired.com/feed/rss",
+    "https://hnrss.org/frontpage",
+    "https://feeds.a.dj.com/rss/RSSMarketsMain.xml"
+  ]
+}

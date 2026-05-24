@@ -1,0 +1,47 @@
+name: Daily Social Media Post
+
+on:
+  schedule:
+    # Runs every day at 9:00 AM UTC. Adjust to your preferred timezone:
+    # 9 AM IST = 3:30 AM UTC  →  cron: '30 3 * * *'
+    # 9 AM EST = 2:00 PM UTC  →  cron: '0 14 * * *'
+    - cron: '0 9 * * *'
+  workflow_dispatch:  # allows manual trigger from GitHub UI
+
+jobs:
+  post:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run social media poster
+        env:
+          GEMINI_API_KEY:              ${{ secrets.GEMINI_API_KEY }}
+          LINKEDIN_ACCESS_TOKEN:       ${{ secrets.LINKEDIN_ACCESS_TOKEN }}
+          LINKEDIN_ORG_ID:             ${{ secrets.LINKEDIN_ORG_ID }}
+          INSTAGRAM_ACCESS_TOKEN:      ${{ secrets.INSTAGRAM_ACCESS_TOKEN }}
+          INSTAGRAM_USER_ID:           ${{ secrets.INSTAGRAM_USER_ID }}
+          GITHUB_REPOSITORY:           ${{ github.repository }}
+        run: |
+          cd src
+          python main.py
+
+      - name: Commit and push generated image
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add latest_post.jpg
+          git diff --cached --quiet || git commit -m "chore: update daily post image"
+          git push
