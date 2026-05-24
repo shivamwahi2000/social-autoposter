@@ -17,32 +17,46 @@ def generate_posts(article: dict, topic: str) -> dict:
         f"Article summary: {article['summary']}"
     ).strip()
 
-    linkedin_prompt = f"""You are a professional LinkedIn content creator.
+    linkedin_prompt = f"""You are a thought leader and content writer at Krianno TechLabs — an AI analytics company founded in 2025 that helps SMBs and mid-market businesses turn data chaos into revenue growth through advanced analytics, autonomous AI agents, and intelligent data pipelines.
 
-Based on the following article, write a LinkedIn post:
+Write a LinkedIn post based on the following topic and article:
 
 {context}
 
+Choose ONE of these formats for the post:
+- A client case study (anonymized): describe a real-world problem a business faced, how an AI/data solution solved it, and the measurable outcome
+- A new AI solution or capability: explain what it does, the problem it solves, and why it matters for businesses today
+- A thought leadership insight: a sharp observation about AI/data trends with a practical takeaway for business leaders
+
 Requirements:
-- Professional, insightful, and thought-provoking tone
-- 150–300 words
-- End with a question or clear call to action that invites comments
-- Maximum 3 hashtags placed at the very end
+- Written as if posted by Krianno TechLabs
+- Professional, sharp, and insights-driven tone
+- 150–250 words
+- Use short paragraphs for readability
+- End with a thought-provoking question or CTA (e.g. "Curious how this could work for your business? Let's talk → kriannotechlabs.com")
+- Maximum 3 relevant hashtags at the very end
 - No emojis
 - Return only the post text, nothing else."""
 
-    instagram_prompt = f"""You are an engaging Instagram content creator.
+    instagram_prompt = f"""You are a creative content writer for Krianno TechLabs — an AI analytics company that helps businesses of all sizes unlock the power of their data using AI agents, predictive analytics, and intelligent automation.
 
-Based on the following article, write an Instagram caption:
+Write an Instagram caption based on the following topic and article:
 
 {context}
 
+Choose ONE of these formats:
+- A quick client win: "A client came to us with X problem. Here's what happened when we applied AI 👇"
+- A surprising AI stat or insight that stops the scroll
+- A relatable business pain point that AI can solve
+
 Requirements:
-- Conversational, upbeat, and relatable tone
-- 60–150 words of caption text (before hashtags)
-- 2–4 emojis naturally placed within the caption
+- Written as Krianno TechLabs
+- Conversational, engaging, and relatable — not overly corporate
+- 60–120 words of caption text (before hashtags)
+- 2–4 emojis naturally placed
+- End with a soft CTA like "Link in bio" or "DM us to learn more"
 - 10–15 relevant hashtags on a new line at the end
-- Return only the caption text with hashtags, nothing else."""
+- Return only the caption with hashtags, nothing else."""
 
     linkedin_response = model.generate_content(linkedin_prompt)
     instagram_response = model.generate_content(instagram_prompt)

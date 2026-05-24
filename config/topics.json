@@ -1,17 +1,20 @@
 {
   "topics": [
-    "artificial intelligence",
-    "entrepreneurship",
-    "productivity",
-    "technology trends",
-    "leadership",
-    "startup culture",
-    "digital transformation",
-    "innovation",
-    "future of work",
-    "personal development",
-    "marketing strategy",
-    "data science"
+    "AI-powered demand forecasting for retail businesses",
+    "automating financial reporting with AI agents",
+    "predictive maintenance using machine learning in manufacturing",
+    "turning raw customer data into revenue insights",
+    "AI agents that handle end-to-end sales pipeline analysis",
+    "real-time anomaly detection in business operations",
+    "replacing manual data pipelines with autonomous AI workflows",
+    "how small businesses can compete with enterprise AI tools",
+    "building a data-driven culture in growing companies",
+    "AI-driven customer churn prediction and retention",
+    "automating inventory management with predictive analytics",
+    "using AI to identify hidden revenue opportunities in existing data",
+    "natural language querying — asking your data questions in plain English",
+    "AI agents for automated competitor analysis",
+    "reducing operational costs through intelligent process automation"
   ],
   "rss_feeds": [
     "https://techcrunch.com/feed/",
