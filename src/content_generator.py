@@ -23,10 +23,11 @@ Write a LinkedIn post based on the following topic and article:
 
 {context}
 
-Choose ONE of these formats for the post:
+Choose ONE of these formats for the post (pick whichever fits the topic best):
 - A client case study (anonymized): describe a real-world problem a business faced, how an AI/data solution solved it, and the measurable outcome
 - A new AI solution or capability: explain what it does, the problem it solves, and why it matters for businesses today
 - A thought leadership insight: a sharp observation about AI/data trends with a practical takeaway for business leaders
+- A hiring or internship post: announce an open role or internship, describe what kind of person thrives at Krianno TechLabs, what they'll work on, and end with a CTA to apply or DM
 
 Requirements:
 - Written as if posted by Krianno TechLabs
@@ -44,10 +45,11 @@ Write an Instagram caption based on the following topic and article:
 
 {context}
 
-Choose ONE of these formats:
+Choose ONE of these formats (pick whichever fits the topic best):
 - A quick client win: "A client came to us with X problem. Here's what happened when we applied AI 👇"
 - A surprising AI stat or insight that stops the scroll
 - A relatable business pain point that AI can solve
+- A hiring or internship post: exciting, energetic announcement of an open role or internship — what they'll build, why it's a great opportunity, CTA to DM or apply
 
 Requirements:
 - Written as Krianno TechLabs
